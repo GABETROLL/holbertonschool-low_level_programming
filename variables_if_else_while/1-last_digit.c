@@ -2,9 +2,10 @@
 #include <time.h>
 #include <stdio.h>
 
-/** 
- * main - Prints random number, its last digit
+/**
+ * main - Prints random number
  * and weather its last digit is: 0, less than 6 or greater than 5.
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
