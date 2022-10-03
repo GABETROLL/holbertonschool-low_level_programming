@@ -12,8 +12,6 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
-	int last_digit = n % 10;
 	
 	if (n < 6)
 	{
