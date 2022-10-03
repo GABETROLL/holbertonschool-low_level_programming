@@ -8,18 +8,20 @@ int main(void)
 {
 	int digit;
 
-	for (digit = 48; digit < 57; digit++)
+	for (digit = 48; digit < 58; digit++)
 	{
 		putchar(digit);
 		/* bytes [48,58) represent digits. */
-		putchar(44);
-		/* ',' */
-		putchar(32);
-		/* space */
-	}
 
-	putchar(57);
-	/* '9' */
+		if (digit != 57)
+		{
+
+			putchar(44);
+			/* ',' */
+			putchar(32);
+			/* space */
+		}
+	}
 
 	putchar(10);
 	/* new line */
