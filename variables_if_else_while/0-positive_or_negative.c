@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 /**
  * main - Prints random number and weather it's positive, negative or zero
  * Return: Always 0 (Success)
-  */
+ */
 int main(void)
 {
 	int n;
