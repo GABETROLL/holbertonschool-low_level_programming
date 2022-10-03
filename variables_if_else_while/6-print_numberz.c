@@ -1,17 +1,18 @@
 #include <stdio.h>
 
 /**
- * main - prints alphabet in lowercase.
+ * main - Prints all digits.
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int letter;
+	int digit;
 
-	for (letter = 97; letter < 123; letter++)
+	for (digit = 48; digit < 58; digit++)
 	{
-		putchar(letter);
+		putchar(digit);
 	}
+
 	putchar(10);
 	/* new line */
 
