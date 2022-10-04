@@ -17,13 +17,3 @@ void print_alphabet(void)
 	/* new line */
 }
 
-/**
- * main - Prints alphabet then exits.
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
-
