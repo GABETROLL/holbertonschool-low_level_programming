@@ -28,6 +28,16 @@ void times_table(void)
 			 * Displaying numbers as base 10 using modulo and division operators.
 			 * There are a max of 2 digits, highest is 81.
 			 */
+
+			if (b < 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+			else
+			{
+				_putchar('\n');
+			}
 		}
 	}
 }
