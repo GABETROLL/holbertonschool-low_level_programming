@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-	int a;
-	int b;
-	int temp;
+	long int a;
+	long int b;
+	long int temp;
 
 	int iteration;
 
@@ -17,14 +17,14 @@ int main(void)
 
 	for (iteration = 0; iteration < 49; iteration++)
 	{
-		printf("%d, ", b);
+		printf("%ld, ", b);
 
 		temp = b;
 		b += a;
 		a = temp;
 	}
 
-	printf("%d\n", b);
+	printf("%ld\n", b);
 
 	return (0);
 }
