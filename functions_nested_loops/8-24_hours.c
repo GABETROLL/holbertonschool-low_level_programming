@@ -28,8 +28,8 @@ void jack_bauer(void)
 
 			ml = minute;
 			mm = minute / 10;
-			_putchar('0' + ml % 10);
 			_putchar('0' + mm % 10);
+			_putchar('0' + ml % 10);
 			/*
 			 * In order to print a digit's numbers one-by-one,
 			 * we have to use the modulo and division operators.
