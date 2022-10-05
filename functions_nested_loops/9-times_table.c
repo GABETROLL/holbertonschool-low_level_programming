@@ -9,7 +9,6 @@ void times_table(void)
 	int a;
 	int b;
 	int product;
-
 	int msd;
 	int lsd;
 
@@ -18,26 +17,21 @@ void times_table(void)
 		for (b = 0; b < 10; b++)
 		{
 			product = a * b;
-
 			lsd = product % 10;
 			msd = (product / 10) % 10;
 
-			if (msd == 0)
+			if (b != 0)
 			{
-				_putchar(' ');
+				if (msd == 0)
+				{
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar('0' + msd);
+				}
 			}
-			else
-			{
-				_putchar('0' + msd);
-			}
-			/* Leading 0 digits aren't so nice, so we print spaces instead. */
-
 			_putchar('0' + lsd);
-			/*
-			 * Displaying numbers as base 10 using modulo and division operators.
-			 * There are a max of 2 digits, highest is 81.
-			 */
-
 			if (b < 9)
 			{
 				_putchar(',');
