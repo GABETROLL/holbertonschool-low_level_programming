@@ -22,7 +22,12 @@ void times_table(void)
 			lsd = product % 10;
 			msd = (product / 10) % 10;
 
-			_putchar('0' + msd);
+			if (msd != 0)
+			{
+				_putchar('0' + msd);
+			}
+			/* Leading 0 digits aren't so nice. */
+
 			_putchar('0' + lsd);
 			/*
 			 * Displaying numbers as base 10 using modulo and division operators.
