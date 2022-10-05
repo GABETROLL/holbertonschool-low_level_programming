@@ -26,7 +26,7 @@ void print_times_table(int n)
 		{
 			product = a * b;
 			lsd = product % 10;
-			md = (product / 10) % 10
+			md = (product / 10) % 10;
 			msd = product / 100;
 
 			if (msd == 0)
