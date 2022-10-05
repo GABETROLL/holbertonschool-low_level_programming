@@ -22,11 +22,15 @@ void times_table(void)
 			lsd = product % 10;
 			msd = (product / 10) % 10;
 
-			if (msd != 0)
+			if (msd == 0)
+			{
+				_putchar(' ');
+			}
+			else
 			{
 				_putchar('0' + msd);
 			}
-			/* Leading 0 digits aren't so nice. */
+			/* Leading 0 digits aren't so nice, so we print spaces instead. */
 
 			_putchar('0' + lsd);
 			/*
