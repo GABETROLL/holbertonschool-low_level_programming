@@ -36,7 +36,7 @@ void print_times_table(int n)
 				_putchar('0' + msd);
 			}
 			_putchar('0' + lsd);
-			if (b < 9)
+			if (b < n)
 			{
 				_putchar(',');
 				_putchar(' ');
