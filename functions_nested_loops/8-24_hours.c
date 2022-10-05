@@ -19,17 +19,17 @@ void jack_bauer(void)
 		{
 			h = hour;
 
-			_putchar(h % 10);
+			_putchar('0' + h % 10);
 			h %= 10;
-			_putchar(h % 10);
+			_putchar('0' + h % 10);
 
 			_putchar(':');
 
 			m = minute;
 
-			_putchar(m % 10);
+			_putchar('0' + m % 10);
 			m %= 10;
-			_putchar(m % 10);
+			_putchar('0' + m % 10);
 		}
 	}
 }
