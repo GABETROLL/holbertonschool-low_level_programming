@@ -11,9 +11,6 @@ void print_times_table(int n)
 	int a;
 	int b;
 	int product;
-	int msd;
-	int md;
-	int lsd;
 
 	if (n > 15 || n < 0)
 	{
@@ -22,6 +19,10 @@ void print_times_table(int n)
 
 	for (a = 0; a <= n; a++)
 	{
+		int msd;
+		int md;
+		int lsd;
+
 		for (b = 0; b <= n; b++)
 		{
 			product = a * b;
@@ -29,16 +30,24 @@ void print_times_table(int n)
 			md = (product / 10) % 10;
 			msd = product / 100;
 
-			if (msd == 0)
+			if (product == 0 || product / 10 == 0)
 			{
 				_putchar(' ');
+				_putchar(' ');
+			}
+
+			else if (product / 100 == 0)
+			{
+				_putchar(' ');
+				_putchar('0' + md);
 			}
 			else
 			{
 				_putchar('0' + msd);
+				_putchar('0' + md);
 			}
-			_putchar('0' + md);
 			_putchar('0' + lsd);
+
 			if (b < n)
 			{
 				_putchar(',');
