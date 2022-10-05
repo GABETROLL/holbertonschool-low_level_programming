@@ -14,16 +14,16 @@ void print_to_98(int n)
 	{
 		for (current = n; current < 98; current++)
 		{
-			printf("%d", current);
+			printf("%d\n", current);
 		}
 	}
 	else if (n > 98)
 	{
 		for (current = n; current > 98; current--)
 		{
-			printf("%d", current);
+			printf("%d\n", current);
 		}
 	}
-	printf("98");
+	printf("98\n");
 }
 
