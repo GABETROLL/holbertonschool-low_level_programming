@@ -20,7 +20,7 @@ void jack_bauer(void)
 			h = hour;
 
 			_putchar('0' + h % 10);
-			h %= 10;
+			h /= 10;
 			_putchar('0' + h % 10);
 
 			_putchar(':');
@@ -28,8 +28,15 @@ void jack_bauer(void)
 			m = minute;
 
 			_putchar('0' + m % 10);
-			m %= 10;
+			m /= 10;
 			_putchar('0' + m % 10);
+			/*
+			 * In order to print a digit's numbers one-by-one,
+			 * we have to use the modulo and division operators.
+			 */
+
+			_putchar('\n');
+			/* new line */
 		}
 	}
 }
