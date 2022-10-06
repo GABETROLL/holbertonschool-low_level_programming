@@ -4,7 +4,7 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm
 all:
-	gcc $(SRC) -o $(NAME)
+	$(CC) $(SRC) -o $(NAME)
 clean:
 	RM -f school
 oclean:
@@ -12,5 +12,5 @@ oclean:
 fclean:
 	RM "*"
 re:
-	gcc $(SRC) $(OBJ) -o $(NAME)
+	$(CC) $(SRC) $(OBJ) -o $(NAME)
 
