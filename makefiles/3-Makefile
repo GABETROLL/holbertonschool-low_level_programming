@@ -8,9 +8,9 @@ all:
 clean:
 	$(RM) -f $(NAME)
 oclean:
-	$(RM) "*.o"
+	$(RM) $(OBJ)
 fclean:
-	$(RM) "*"
+	$(RM) $(SRC) $(OBJ) $(NAME)
 re:
 	$(CC) $(SRC) $(OBJ) -o $(NAME)
 
