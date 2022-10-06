@@ -6,11 +6,11 @@ RM = rm
 all:
 	$(CC) $(SRC) -o $(NAME)
 clean:
-	RM -f school
+	$(RM) -f $(NAME)
 oclean:
-	RM "*.o"
+	$(RM) "*.o"
 fclean:
-	RM "*"
+	$(RM) "*"
 re:
 	$(CC) $(SRC) $(OBJ) -o $(NAME)
 
