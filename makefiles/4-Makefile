@@ -14,5 +14,5 @@ oclean:
 fclean:
 	$(RM) $(OBJ) $(NAME)
 re:
-	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
+	$(CC) $(OBJ) $(NAME) $(CFLAGS)
 
