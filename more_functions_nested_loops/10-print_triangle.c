@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_square - Prints a size * size square of '#' chars.
- * @size: size of square.
+ * print_triangle - Prints a size * size right triangle of '#' chars.
+ * @size: size of triangle.
  * Return: void
  */
-void print_square(int size)
+void print_triangle(int size)
 {
 	int x, y;
 
