@@ -6,8 +6,8 @@
  */
 int main(void)
 { 
-	int factor;
-	int number;
+	long int factor;
+	long int number;
 	factor = 612852475143;
 
 	while (factor != 1)
@@ -22,7 +22,7 @@ int main(void)
 		}
 	}
 
-	printf("%d\n", number);
+	printf("%ld\n", number);
 
 	return (0);
 }
