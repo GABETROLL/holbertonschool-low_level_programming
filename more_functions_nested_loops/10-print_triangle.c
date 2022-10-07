@@ -7,21 +7,19 @@
  */
 void print_triangle(int size)
 {
-	int x, y;
+	int lines, spaces, pounds;
 
-	for (x = size; x > 0; x--)
+	for (lines = 1; lines <= size; lines++)
 	{
-		for (y = 0; y < size; y++)
+		for (spaces = size - lines; spaces > 0; spaces--)
 		{
-			if (y < x)
-			{
-				_putchar(' ');
-			}
-			else
-			{
-				_putchar('#');
-			}
+			_putchar(' ');
 		}
+		for (pounds = 1; pounds <= lines; pounds++)
+		{
+			_putchar('#');
+		}
+
 		_putchar('\n');
 	}
 
