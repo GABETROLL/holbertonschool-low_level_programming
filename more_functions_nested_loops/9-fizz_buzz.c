@@ -9,7 +9,7 @@ int main(void)
 {
 	int n;
 
-	for (n = 1; n <= 100; n++)
+	for (n = 1; n < 100; n++)
 	{
 		if (n % (3 * 5) == 0)
 		{
@@ -31,10 +31,12 @@ int main(void)
 			printf("%d", n);
 		}
 
+
 		printf(" ");
 	}
-	
-	printf("\n");
+
+	printf("Buzz\n");
+	/* 100 -> 'Fizz' */
 
 	return (0);
 }
