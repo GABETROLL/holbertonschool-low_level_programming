@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - FizzBuzz
@@ -29,7 +30,11 @@ int main(void)
 		{
 			printf("%d", n);
 		}
+
+		_putchar(' ');
 	}
+	
+	_putchar('\n')
 
 	return (0);
 }
