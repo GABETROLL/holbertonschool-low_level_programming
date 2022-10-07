@@ -11,6 +11,8 @@ void more_numbers(void)
 
 	for (iteration = 0; iteration < 10; iteration++)
 	{
+		int msd;
+
 		for (n = 0; n <= 14; n++)
 		{
 			msd = n / 10;
