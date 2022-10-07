@@ -31,10 +31,10 @@ int main(void)
 			printf("%d", n);
 		}
 
-		_putchar(' ');
+		printf(" ");
 	}
 	
-	_putchar('\n');
+	printf("\n");
 
 	return (0);
 }
