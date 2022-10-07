@@ -18,10 +18,10 @@ void more_numbers(void)
 			msd = n / 10;
 			if (msd != 0)
 			{
-				_putchar(msd);
+				_putchar('0' + msd);
 			}
 
-			_putchar(n % 10);
+			_putchar('0' + n % 10);
 		}
 		_putchar('\n');
 	}
