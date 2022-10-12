@@ -6,7 +6,18 @@
  * Return: int
  */
 int _strlen(char *s)
-{	
-	return (sizeof(&s));
+{
+	int size;
+	char current;
+
+	current = *s;
+
+	while (current != '\0')
+	{
+		size++;
+		current = *(s + 1);
+	}
+
+	return size;
 }
 
