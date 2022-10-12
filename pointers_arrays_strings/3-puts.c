@@ -7,9 +7,9 @@
  */
 void _puts(char *str)
 {
-	char *current = str;
+	int index = 0;
 
-	while (*current != "\0")
+	while (str[index] != "\0")
 	{
 		/* '\0' is null, and marks the end of a string. */
 		_putchar(*current);
