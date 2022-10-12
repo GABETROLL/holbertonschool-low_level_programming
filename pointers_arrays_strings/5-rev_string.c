@@ -21,6 +21,9 @@ void rev_string(char *s)
 		right_char = *right;
 		*right = *left;
 		*left = right_char;
+
+		left++;
+		right--;
 	}
 }
 
