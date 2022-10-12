@@ -7,12 +7,12 @@
  */
 void _puts(char *str)
 {
-	int index = 0;
+	char *pointer = str;
 
-	while (str[index] != "\0")
+	while (*pointer != '\0')
 	{
-		/* '\0' is null, and marks the end of a string. */
-		_putchar(*current);
+		_putchar(*pointer);
+		pointer++;
 	}
 }
 
