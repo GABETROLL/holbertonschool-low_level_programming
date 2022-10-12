@@ -21,5 +21,6 @@ void puts2(char *str)
 		_putchar(*pointer);
 		pointer += 2;
 	}
+	_putchar('\n');
 }
 
