@@ -14,5 +14,6 @@ void _puts(char *str)
 		_putchar(*pointer);
 		pointer++;
 	}
+	_putchar('\n');
 }
 
