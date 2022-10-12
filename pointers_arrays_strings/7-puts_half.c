@@ -8,8 +8,7 @@
 void puts_half(char *str)
 {
 	int length;
-	
-	char *start = str;
+
 	char *pointer;
 
 	while (*(str + length) != '\0')
@@ -17,11 +16,12 @@ void puts_half(char *str)
 		length++;
 	}
 
-	pointer = start + ((length + 1) >> 1);
+	pointer = str + ((length + 1) >> 1);
 
 	while (*pointer != '\0')
 	{
 		_putchar(*pointer);
+		pointer++;
 	}
 	_putchar('\n');
 }
