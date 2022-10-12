@@ -11,11 +11,15 @@ void print_array(int *a, int n)
 	int *current;
 	int *max = a + n;
 
-	for (current = a; current < max - 1; current++)
+	for (current = a; current < max; current++)
 	{
-		printf("%d, ", *current);
+		printf("%d", *current);
+
+		if (current < max - 1)
+		{
+			printf(", ");
+		}
 	}
-	printf("%d", *current);
-	printf("\b\b\n");
+	printf("\n");
 }
 
