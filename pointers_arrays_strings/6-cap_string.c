@@ -30,7 +30,7 @@ char *cap_string(char *str)
 	int index;
 	char previous;
 
-	char separators[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}', ' ', '\t'};
+	char separators[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}', ' ', '\t', '\n'};
 	previous = '\0';
 
 	for (index = 0; str[index] != '\0'; index++)
