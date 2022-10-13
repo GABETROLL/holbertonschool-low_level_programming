@@ -35,7 +35,7 @@ char *cap_string(char *str)
 
 	for (index = 0; str[index] != '\0'; index++)
 	{
-		if (in(previous, separators)
+		if ((in(previous, separators) || previous == '\0')
 				&& (str[index] >= 'a' && str[index] <= 'z'))
 		{
 			str[index] -= 'a' - 'A';
