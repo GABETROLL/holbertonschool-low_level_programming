@@ -17,7 +17,7 @@ void print_diagsums(int *a, int size)
 
 	squared_size = size * size;
 	index = 0;
-	/* 
+	/*
 	 * When casting a 2d matrix into an int pointer,
 	 * each diagonal in the matrix is size + 1 ahead of the previous one.
 	 */
