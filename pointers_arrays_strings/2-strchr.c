@@ -8,16 +8,21 @@
  */
 char *_strchr(char *s, char c)
 {
-	int index;
+	int index = 0;
 
-	for (index = 0; s[index] != '\0'; index++)
+	while (1)
 	{
 		if (s[index] == c)
 		{
 			return (s + index);
 		}
-	}
 
-	return (0);
+		if (s[index] == '\0')
+		{
+			return (0);
+		}
+
+		index++;
+	}
 }
 
