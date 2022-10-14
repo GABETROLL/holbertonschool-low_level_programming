@@ -22,7 +22,7 @@ char *_strstr(char *haystack, char *needle)
 
 		all_equal = 1;
 
-		do
+		while (haystack[temp_h] != '\0' && needle[n] != '\0')
 		{
 			if (haystack[temp_h] != needle[n])
 			{
@@ -33,7 +33,6 @@ char *_strstr(char *haystack, char *needle)
 			temp_h++;
 			n++;
 		}
-		while (haystack[temp_h] != '\0' && needle[n] != '\0');
 
 		if (all_equal)
 		{
