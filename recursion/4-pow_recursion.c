@@ -14,7 +14,11 @@ int _pow_recursion(int x, int y)
 	}
 	else if (y < 0)
 	{
+<<<<<<< HEAD
 		return (1 / x * _pow_recursion(x, y + 1));
+=======
+		return (-1);
+>>>>>>> 54a25f707292011a08ee0ddc4bb28842fb0278ad
 	}
 	return (1);
 }
