@@ -3,7 +3,7 @@
  * find_square_root - Calculates natural square root of n.
  * If root is the square root of n, it returns root.
  * If it's not, it tries root + 1 in a new function call.
- * 
+ *
  * If root * root goes past the result, return -1,
  * since n is not a perfect square.
  *
@@ -18,7 +18,7 @@ int find_square_root(int root, int n)
 
 	if (perfect_square < n)
 	{
-		return find_square_root(root + 1, n);
+		return (find_square_root(root + 1, n));
 	}
 	else if (perfect_square > n)
 	{
