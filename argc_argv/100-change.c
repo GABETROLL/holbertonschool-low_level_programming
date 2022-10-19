@@ -4,7 +4,7 @@
 /**
  * main - Prints the minimum amount of coins that add up to 'change'.
  *
- * The word 'coins' above means: 25, 10, 5, and 1.
+ * The word 'coins' above means: 25, 10, 5, 2, and 1.
  *
  * @argc: argument count
  * @argv: argument pointer array
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		int cents;
 		int coin_index;
 		int result;
-		int coins[] = {25, 10, 5, 1};
+		int coins[] = {25, 10, 5, 2, 1};
 
 		cents = atoi(argv[1]);
 		coin_index = 0;
