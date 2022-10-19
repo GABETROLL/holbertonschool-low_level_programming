@@ -12,6 +12,10 @@ int main(int argc, char *argv[])
 {
 	if (argc)
 	{
+		/*
+		 * This if exists only because
+		 * Holberton's compiler wants all variables to be used.
+		 */
 		printf("%s\n", argv[0]);
 	}
 
