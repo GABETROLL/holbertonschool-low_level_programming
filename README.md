@@ -1,1 +1,1 @@
-#This is a repository containing begginer C projects.
+# This is a repository containing begginer C projects.
