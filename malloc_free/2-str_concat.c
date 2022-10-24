@@ -4,7 +4,7 @@
  * safe_strlen - Returns the length of s,
  * WITHOUT the first null byte,
  * if s exists.
- * If s is NULL, return 0.
+ * If s is NULL, return 0, consider s empty.
  *
  * @s: string
  * Return: length of s if s is not NULL, 0 otherwise.
@@ -39,10 +39,6 @@ char *str_concat(char *s1, char *s2)
 
 	s1_size = safe_strlen(s1);
 	s2_size = safe_strlen(s2);
-	/*
-	 * if null is passed instead of a pointer to a stirng,
-	 * the string is considered empty.
-	 */
 
 	super_string = malloc(sizeof(char) * (s1_size + s2_size + 1));
 	/* "+1" to add a null byte at the end of our new string. */
@@ -51,6 +47,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
+	/* failed to allocate new memory/ran out of space */
 
 	super_string_index = 0;
 
