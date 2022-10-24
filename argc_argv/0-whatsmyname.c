@@ -8,17 +8,8 @@
  * @argv: Shell argument pointers
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int __attribute__((unused)), char *argv[])
 {
-	if (argc)
-	{
-		/*
-		 * This if exists only because
-		 * Holberton's compiler wants all variables to be used.
-		 */
-		printf("%s\n", argv[0]);
-	}
-
 	return (0);
 }
 
