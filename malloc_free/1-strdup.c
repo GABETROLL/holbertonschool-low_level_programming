@@ -11,10 +11,16 @@ char *_strdup(char *str)
 	int index;
 	int size;
 
-	size = 0;
-	do {
-		size++;
-	} while (str[size]);
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+	/* edge case */
+
+	for (size = 0; str[size]; size++)
+	{
+	}
+	size++;
 	/* Count all chars in the string, INCLUDING the null byte. */
 
 	copy = malloc(sizeof(char) * size);
@@ -23,14 +29,12 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	/* failure */
+	/* failure to allocate memory */
 
-	index = 0;
-	do {
+	for (index = size; index >= 0; index--)
+	{
 		copy[index] = str[index];
-
-		index++;
-	} while (str[index]);
+	}
 	/* copy string INCLUDING null byte */
 
 	return (copy);
