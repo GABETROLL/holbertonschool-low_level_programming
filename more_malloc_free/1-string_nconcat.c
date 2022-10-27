@@ -60,6 +60,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i;
 	unsigned int s2_i;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+
 	new_len = concat_len(s1, s2, n);
 	result = malloc(new_len);
 
@@ -71,24 +74,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		result[i] = s1[i];
 	}
-	/* copy 's1''s bytes */
+	/* copy 's1''s bytes, then 's2''s bytes below */
 
 	s2_i = 0;
 	for (; i < new_len - 1;)
 	{
 		/*
-		 * using i = new_len - 1 in this for loop
-		 * would add an extra character,
-		 * since new_len counts the null byte at the end
-		 * that isn't necessarily at that position in
-		 * s2.
+		 * Since new_len counts the final result's null byte,
+		 * using i = new_len - 1 in the for loop
+		 * would point to an extra character in s2.
 		 */
 		result[i] = s2[s2_i];
 
 		i++;
 		s2_i++;
 	}
-	/* copy 's2''s bytes */
 
 	result[new_len - 1] = '\0';
 	/* Didn't touch this index in for loop. */
