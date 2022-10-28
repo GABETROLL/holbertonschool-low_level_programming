@@ -36,13 +36,19 @@ int *array_range(int min, int max)
 
 	size = (max - min + 1);
 	/*
-	 * The difference between max and min is always positive,
-	 * since max > min.
+	 * Look at this range:
+	 * 2, 3, 4, 5
 	 *
-	 * Their difference is also one less than the numbers
-	 * in an array that includes min and max.
-	 * (example: 5 - 2 = 3, but the range 2 - 5 contains 4 numbers:
-	 * 2, 3, 4, 5)
+	 * Notice something?
+	 * The difference of the max and min parameters in the range above
+	 * is 3, but the amount of ints in it is 4.
+	 *
+	 * This means that if we include 'min' and 'max' in
+	 * the array, the array's size is 'max' and 'min''s difference
+	 * plus one.
+	 *
+	 * Their difference is also always positive,
+	 * since max > min
 	 */
 
 	result = malloc(sizeof(int) * size);
