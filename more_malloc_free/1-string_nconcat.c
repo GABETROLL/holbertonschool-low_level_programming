@@ -47,11 +47,11 @@ void concat_lengths(unsigned int *s1_size, unsigned int *s2_size, unsigned int *
 	/* concatenation size */
 	if (n > *s2_size)
 	{
-		*size = *s1_size + n + 1;
+		*size = *s1_size + *s2_size + 1;
 	}
 	else
 	{
-		*size = *s1_size + *s2_size + 1;
+		*size = *s1_size + n + 1;
 	}
 	/* Adding 1 to include the null byte needed below. */
 }
