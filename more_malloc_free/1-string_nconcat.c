@@ -44,6 +44,9 @@ int concat_len(char *s1, char *s2, unsigned int n)
  * (WITHOUT their null bytes, followed by a null byte),
  * then returns a pointer to it.
  *
+ * if a string pointer passed is NULL,
+ * it's treated like an empty string.
+ *
  * if n >= strlen(s2), this function just uses
  * the whole 's2' string.
  *
@@ -60,12 +63,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i;
 	unsigned int s2_i;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
+	if (s1 == NULL)
+		s1 = &'\0';
+	if (s2 == NULL)
+		s2 == &'\0';
 
 	new_len = concat_len(s1, s2, n);
 	result = malloc(new_len);
-
 	if (result == NULL)
 		return (NULL);
 	/* Failed to allocate memory. */
