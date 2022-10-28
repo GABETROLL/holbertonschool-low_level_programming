@@ -2,100 +2,116 @@
 #include <string.h>
 
 /**
- * concat_len - Returns the length of strings
- * 's1' and 's2' if they were concatenated together
+ * concat_lengths - Calculates the sizes of s1, s2 and the
+ * concatenation string of s1 and s2 with
+ * the lower function in this file and
+ * writes them at s1_size, s2_size, and size.
  *
- * using all of 's1' without the its null byte;
- * and the first 'n' bytes of 's2' if 'n' < strlen(s2),
- * otherwise using strlen(s2).
+ * The sizes of s1 and s2 strings are outputed as 0
+ * if they are NULL.
  *
- * @s1: string pointer
- * @s2: stirng pointer
- * @n: number of bytes to copy from 's2',
- * unless 'n' is bigger than 's2',
- * in which case all bytes are copied
+ * (the names explain their purpose:)
+ * @s1_size: pointer to output int
+ * @s2_size: pointer to output int
+ * @size: pointer to output int
+ * @s1: pointer to string
+ * @s2: pointer to string
+ * @n: amount of bytes to use from s2
+ * (read lower function)
  *
- * Return: length of s1 + s2 INCLUDING NULL BYTE
+ * Return: void
  */
-int concat_len(char *s1, char *s2, unsigned int n)
+void concat_lengths(unsigned int *s1_size, unsigned int *s2_size, unsigned int *size,
+		char *s1, char *s2, unsigned int n)
 {
-	int result;
-	unsigned int new_s2_len;
-
-	result = strlen(s1) + 1;
-
-	new_s2_len = strlen(s2);
-
-	if (n < new_s2_len)
+	/* s1_size */
+	if (s1 == NULL)
 	{
-		result += n;
+		*s1_size = 0;
 	}
 	else
 	{
-		result += new_s2_len;
+		*s1_size = strlen(s1);
 	}
 
-	return (result);
+	/* s2_size */
+	if (s2 == NULL)
+	{
+		*s2_size = 0;
+	}
+	else
+	{
+		*s2_size = strlen(s2);
+	}
+
+	/* concatenation size */
+	if (n > *s2_size)
+	{
+		*size = *s1_size + n + 1;
+	}
+	else
+	{
+		*size = *s1_size + *s2_size + 1;
+	}
+	/* Adding 1 to include the null byte needed below. */
 }
 
 /**
- * string_nconcat - Creates a new string that is 's1' and
- * the first 'n' bytes of 's2' back-to-back
- * (WITHOUT their null bytes, followed by a null byte),
- * then returns a pointer to it.
+ * string_nconcat - Concatenates string s1 left of s2
+ * in a new string, and returns a pointer to it.
  *
- * if a string pointer passed is NULL,
- * it's treated like an empty string.
+ * It tries to use s2's first n bytes.
+ * If n is greater or equal to s2's length,
+ * it uses all of s2 instead.
  *
- * if n >= strlen(s2), this function just uses
- * the whole 's2' string.
+ * If the string pointers are NULL,
+ * they are treated as "".
  *
- * @s1: pointer to string that shows first in new string
- * @s2: pointer to string that shows after
- * @n: number of chars to copy from s2
+ * @s1: string pointer
+ * @s2: string pointer
+ * @n: number of bytes to try to use in s2.
  *
- * Return: pointer to new string
+ * Return: new string with s1 and s2's concatenation
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
+	unsigned int s1_size;
+	unsigned int s2_size;
+	unsigned int size;
+
 	char *result;
-	unsigned int new_len;
-	unsigned int i;
-	unsigned int s2_i;
 
-	if (s1 == NULL)
-		s1 = &'\0';
-	if (s2 == NULL)
-		s2 == &'\0';
+	unsigned int result_index;
+	unsigned int s_index;
 
-	new_len = concat_len(s1, s2, n);
-	result = malloc(new_len);
+	concat_lengths(&s1_size, &s2_size, &size, s1, s2, n);
+
+	result = malloc(size);
 	if (result == NULL)
 		return (NULL);
-	/* Failed to allocate memory. */
 
-	for (i = 0; s1[i]; i++)
+	/* copying s1 into left of string, excluding its null byte. */
+	s_index = 0;
+	for (result_index = 0; result_index < s1_size;)
 	{
-		result[i] = s1[i];
-	}
-	/* copy 's1''s bytes, then 's2''s bytes below */
+		result[result_index] = s1[s_index];
 
-	s2_i = 0;
-	for (; i < new_len - 1;)
-	{
-		/*
-		 * Since new_len counts the final result's null byte,
-		 * using i = new_len - 1 in the for loop
-		 * would point to an extra character in s2.
-		 */
-		result[i] = s2[s2_i];
-
-		i++;
-		s2_i++;
+		result_index++;
+		s_index++;
 	}
 
-	result[new_len - 1] = '\0';
-	/* Didn't touch this index in for loop. */
+	/*
+	 * copying s2 into right of string,
+	 * including its null byte to end the result string.
+	 */
+	s_index = 0;
+	for (; result_index < size;)
+	{
+		result[result_index] = s2[s_index];
+
+		result_index++;
+		s_index++;
+	}
 
 	return (result);
 }
