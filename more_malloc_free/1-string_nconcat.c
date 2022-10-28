@@ -21,7 +21,8 @@
  *
  * Return: void
  */
-void concat_lengths(unsigned int *s1_size, unsigned int *s2_size, unsigned int *size,
+void concat_lengths(unsigned int *s1_size, unsigned int *s2_size,
+		unsigned int *size,
 		char *s1, char *s2, unsigned int n)
 {
 	/* s1_size */
@@ -90,28 +91,29 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (result == NULL)
 		return (NULL);
 
-	/* copying s1 into left of string, excluding its null byte. */
-	s_index = 0;
-	for (result_index = 0; result_index < s1_size;)
+	/* copying s1 */
+	for (result_index = 0; result_index < s1_size; result_index++)
 	{
-		result[result_index] = s1[s_index];
-
-		result_index++;
-		s_index++;
+		result[result_index] = s1[result_index];
+		/* Result_index counts up from 0 in both strings. */
 	}
 
-	/*
-	 * copying s2 into right of string,
-	 * including its null byte to end the result string.
-	 */
+	/* copying s2 */
 	s_index = 0;
-	for (; result_index < size;)
+	for (; result_index < size - 1;)
 	{
+		/*
+		 * index "size - 1" corresponds to the result's
+		 * null byte ending, not a byte in the string pointed to by s2.
+		 */
 		result[result_index] = s2[s_index];
 
 		result_index++;
 		s_index++;
 	}
+
+	result[size - 1] = '\0';
+	/* result's end null byte. */
 
 	return (result);
 }
