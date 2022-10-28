@@ -6,8 +6,8 @@
  * the parameter nmemb, and that its amount
  * of items is the parameter 'size'.
  *
- * @nmemb - the byte size of all items in the array
- * @size - the amount of items in the array
+ * @nmemb: the byte size of all items in the array
+ * @size: the amount of items in the array
  *
  * Return: pointer to created array
  */
