@@ -9,4 +9,5 @@ https://intranet.hbtn.io/rltoken/Z0tUxkCEq-2HssDEnN0bsg
 ---
 ## Scripts:
 1: make a function that calls another function using a function pointer
+2: make a function that calls another function with each item in an array as a parameter
 
