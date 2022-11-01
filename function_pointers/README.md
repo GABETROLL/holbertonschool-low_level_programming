@@ -10,4 +10,7 @@ https://intranet.hbtn.io/rltoken/Z0tUxkCEq-2HssDEnN0bsg
 ## Scripts:
 1: make a function that calls another function using a function pointer
 2: make a function that calls another function with each item in an array as a parameter
+3: make a function that searches for an int's index inside of an array, using a function to "scan the number" to see if it matches
+3: make a function that searches for an int's index inside of an array, using a function to "scan the number" to see if it matches
+3: make a function that searches for an int's index inside of an array, using a function to "scan the number" to see if it matches
 
