@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 
 	if (argc != 4)
 	{
-		printf("Error.\n");
+		printf("Error\n");
 		return (98);
 	}
 
@@ -39,13 +39,13 @@ int main(int argc, char **argv)
 
 	if (op_func == NULL)
 	{
-		printf("Error.\n");
+		printf("Error\n");
 		return (99);
 	}
 
 	if ((argv[2] == div || argv[2] == mod) && b == 0)
 	{
-		printf("Error.");
+		printf("Error");
 		return (100);
 	}
 
