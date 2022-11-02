@@ -7,7 +7,7 @@
  * with the string in '*separator' in between.
  *
  * @separator: pointer to string to separate the strings
- * in '...', like this: 
+ * in '...', like this:
  * hello, hi, im string -> separator = "," .
  * @n: first strings to print from '...'
  *
