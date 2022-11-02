@@ -17,12 +17,20 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list strings;
 	unsigned int i;
+	char *current;
 
 	va_start(strings, n);
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%s", va_arg(strings, char *));
+		current = va_arg(strings, char *);
+
+		/*
+		 * The strings can also be null,
+		 * and must be substituted with "(nil)",
+		 * like we're doing here.
+		 */
+		printf("%s", current ? current : "(nil)");
 		/*
 		 * We want to print the separator after every
 		 * string except the last one, where we want to
