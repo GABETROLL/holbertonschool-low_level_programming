@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * print_numbers - Prints the first 'n' numbers in '...',
@@ -20,19 +21,17 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	for (i = 0; i < n; i++)
 	{
+		printf("%d", va_arg(nums, int));
 		/*
 		 * We want to print the separator after every num
 		 * except the last one, where we want to
 		 * print a new line.
 		 */
-		if (i == n - 1)
+		if (i < n - 1 && separator != NULL)
 		{
-			printf("%d\n", va_arg(nums, int));
-		}
-		else
-		{
-			printf("%d%s", va_arg(nums, int), separator);
+			printf("%s", separator);
 		}
 	}
+	printf("\n");
 }
 
