@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 
 	if ((!strcmp(argv[2], div) || !strcmp(argv[2], mod)) && b == 0)
 	{
-		printf("Error\n");
+		printf("Error");
 		return (100);
 	}
 

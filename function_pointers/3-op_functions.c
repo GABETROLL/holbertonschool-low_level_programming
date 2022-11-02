@@ -45,7 +45,7 @@ int op_div(int a, int b)
 }
 
 /**
- * op_add - Returns the remainder of 'a / b'.
+ * op_mod - Returns the remainder of 'a / b'.
  * @a: dividend
  * @b: divisor
  * Return: remainder of 'a / b'
