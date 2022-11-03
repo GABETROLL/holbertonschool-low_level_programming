@@ -84,7 +84,7 @@ void print_all(const char * const format, ...)
 
 	/* Look at every type format in the 'format' parameter */
 	format_i = 0;
-	while (format_i < format_len)
+	while (format && format_i < format_len)
 	{
 		int format_char_i = 0;
 
