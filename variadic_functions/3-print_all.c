@@ -3,8 +3,58 @@
 #include <string.h>
 
 /**
+ * print_format - print next item from 'items'
+ * using the 'format' format.
+ *
+ * @format:
+ * c for char,
+ * i for integer,
+ * f for float,
+ * s for string
+ *
+ * Any other format won't print, and will return 0,
+ * otherwise 1.
+ *
+ * @items: va_list
+ *
+ * Return: 1 if the format was valid, otherwise 0
+ */
+int print_format(const char format, va_list items)
+{
+	char *s;
+
+	switch (format)
+	{
+		case 'c':
+			printf("%c", (char)va_arg(items, int));
+			return (1);
+		case 'i':
+			printf("%d", va_arg(items, int));
+			return (1);
+		case 'f':
+			printf("%f", (float)va_arg(items, double));
+			return (1);
+		case 's':
+			s = va_arg(items, char *);
+			if (s == NULL)
+			{
+				printf("(nil)");
+				return (0);
+			}
+			printf("%s", s);
+			return (1);
+		default:
+			return (0);
+	}
+}
+
+/**
  * print_all - Prints all items in '...' as
  * types in 'format'.
+ *
+ * Read the current format in 'format' and print the next
+ * item in '...' if the format is valid, otherwise
+ * move to the next format and repeat this process again
  *
  * @format: data type to treat items in '...'
  * like:
@@ -28,45 +78,21 @@ void print_all(const char * const format, ...)
 	int format_len = strlen(format);
 
 	while (format == NULL)
-	{
 		return;
-	}
-
 	va_start(items, format);
 
 	/* Look at every type format in the 'format' parameter */
 	format_i = 0;
-	while (format && format_i < format_len)
+	while (format_i < format_len)
 	{
-		char *s;
-
-		/* and match it to its corresponding printing function */
-		switch (format[format_i])
+		/* and match it to its corresponding printing format */
+		if (print_format(format[format_i], items) && format_i < format_len - 1)
 		{
-			case 'c':
-				printf("%c", (char)va_arg(items, int));
-				break;
-			case 'i':
-				printf("%d", va_arg(items, int));
-				break;
-			case 'f':
-				printf("%f", (float)va_arg(items, double));
-				break;
-			case 's':
-				s = va_arg(items, char *);
-
-				if (s == NULL)
-				{
-					printf("(nil)");
-					break;
-				}
-
-				printf("%s", s);
-				break;
-		}
-
-		if (format_i < format_len - 1)
-		{
+			/*
+			 * making sure we print only ONE ", " after every item except
+			 * the last. If the format was invalid, we ignore it,
+			 * and therefore not print it or the ", " that would come after it.
+			 */
 			printf(", ");
 		}
 
