@@ -15,9 +15,12 @@
  * Any other format won't print, and will return 0,
  * otherwise 1.
  *
+ * If the string is NULL, print "(nil)" and also
+ * return 1.
+ *
  * @items: va_list
  *
- * Return: 1 if the format was valid, otherwise 0
+ * Return: 1 if the format was valid or a string, otherwise 0
  */
 int print_format(const char format, va_list items)
 {
@@ -39,7 +42,7 @@ int print_format(const char format, va_list items)
 			if (s == NULL)
 			{
 				printf("(nil)");
-				return (0);
+				return (1);
 			}
 			printf("%s", s);
 			return (1);
@@ -75,10 +78,15 @@ void print_all(const char * const format, ...)
 	va_list items;
 
 	int format_i;
-	int format_len = strlen(format);
+	int format_len;
 
 	while (format == NULL)
+	{
+		printf("\n");
 		return;
+	}
+
+	format_len = strlen(format);
 	va_start(items, format);
 
 	/* Look at every type format in the 'format' parameter */
