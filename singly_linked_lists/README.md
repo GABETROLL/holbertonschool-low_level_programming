@@ -1,5 +1,4 @@
 # Linked Lists
----
 ## What is a linked list?
 A linked list is a group of structs with a head struct that contain values, and a pointer to another linked list.:
 ```
