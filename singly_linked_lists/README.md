@@ -11,6 +11,8 @@ typedef struct list_s
 } list_t;
 ```
 ## In these exercises, we'll learn how to:
-0: print each item of each node in a linked list
-1: print the length of a linked list
+0. print each item of each node in a linked list
+1. print the length of a linked list
+2. add a node to the beggining of a linked list
+3. add a node to the end of a linked list
 
