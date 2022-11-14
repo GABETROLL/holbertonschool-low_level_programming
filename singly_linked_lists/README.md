@@ -12,4 +12,5 @@ typedef struct list_s
 ```
 ## In these exercises, we'll learn how to:
 0: print each item of each node in a linked list
+1: print the length of a linked list
 
