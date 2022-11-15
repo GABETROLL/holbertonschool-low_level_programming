@@ -1,10 +1,11 @@
 #include "lists.h"
 
 /**
- * add_nodeint - Appends node containing 'n' as new head of linked list '**head'
- * at '*head'. If it fails or if 'head' is NULL, return NULL.
+ * add_nodeint - Appends node containing 'n' as new head of linked list
+ * '**head' at '*head'. If it fails or if 'head' is NULL, return NULL.
  *
  * @head: pointer to head pointer, will be changed to point to new head.
+ * @n: number to put in 'n' attribute of new head
  * Return: address of new node if successful, otherwise NULL.
  */
 listint_t *add_nodeint(listint_t **head, const int n)
