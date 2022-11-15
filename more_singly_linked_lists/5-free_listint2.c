@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * free_listint2 - Frees all nodes in linked list ('**head')
