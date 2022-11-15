@@ -8,6 +8,8 @@
  *
  * @head: pointer to head of linked list
  * @index: index of node that this funtion will return
+ *
+ * Return: pointer to nth node if nth node exists, otherwise: NULL.
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
