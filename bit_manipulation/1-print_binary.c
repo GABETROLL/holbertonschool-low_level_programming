@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * Print_binary - Prints 'n' in binary.
+ * print_binary - Prints 'n' in binary.
  *
  * @n: numbre that will be printed in binary
  * by this function
@@ -11,6 +11,11 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int veil = LLONG_MIN;
+	char current_bit = 0;
+	/* last bit always gets printed */
+	char max_bits = 63;
+	char optional_bits = max_bits;
+
 	/*
 	 * veil = all zeros in the except for the largest bit
 	 * (a 1 followed by 63 0's)
@@ -29,21 +34,17 @@ void print_binary(unsigned long int n)
 	 * (first slide n to start printing at the frst 1 bit)
 	 */
 
-	/* all 0's is just 0 */
-	if (n == 0)
+	/* slide to first 1 bit */
+	for (; optional_bits && !current_bit; optional_bits--)
 	{
-		_putchar('0');
-		return;
+		n <<= 1;
+		current_bit = ((n & veil) >> max_bits);
 	}
 
-	/* slide to first 1 bit */
-	while (!((n & veil) >> 63))
-		n <<= 1;
-
-	/* print bits */
-	while (n)
+	/* print bits (0 runs because last bit is mandatory) */
+	for (; optional_bits >= 0; optional_bits--)
 	{
-		_putchar('0' + ((n & veil) >> 63));
+		_putchar('0' + ((n & veil) >> max_bits));
 		n <<= 1;
 	}
 }
