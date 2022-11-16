@@ -18,7 +18,8 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	if (index > 63)
 		return (-1);
 
-	/*  1101100101
+	/*
+	 *  1101100101
 	 * &1111011111 <- index = 5
 	 * -----------
 	 *  1101000101
