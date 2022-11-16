@@ -12,7 +12,7 @@
  * @index: bit index in 'n', counting from
  * least significant to most significant
  *
- * Return: bit if successful, -1 if failed
+ * Return: bit if index is valid, -1 otherwise
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
