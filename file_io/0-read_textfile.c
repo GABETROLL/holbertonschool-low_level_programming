@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	read_bytes = read(fd, output, letters);
 	close(fd);
 
-	printf("%s", output);
+	write(1, output, read_bytes);
 	return (read_bytes);
 }
 
