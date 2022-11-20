@@ -1,5 +1,18 @@
 #include "main.h"
 
+/**
+ * read_textfile - Prints the first
+ * 'letters' letters of file 'filename'.
+ *
+ * @filename: name of the file to print,
+ * relative to the executable's directory
+ *
+ * @letters: max amount of letters to print from
+ * 'filename'
+ *
+ * Return: amount of letters successfully printed
+ * from 'filename'
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd = open(filename, O_RDONLY);
