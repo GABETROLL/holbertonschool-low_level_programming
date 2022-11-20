@@ -32,17 +32,24 @@ int create_file(const char *filename, char *text_content)
 	if (filename == NULL || *filename == '\0')
 		return (-1);
 
+	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
+
 	if (text_content)
 	{
 		int text_content_len = strlen(text_content);
 		int successfully_written_bytes = 0;
 
-		fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
-		successfully_written_bytes = write(fd, text_content, text_content_len);
-		close(fd);
+		if (text_content_len)
+		{
+			successfully_written_bytes = write(fd, text_content, text_content_len);
+			close(fd);
 
-		return (1 ? successfully_written_bytes == text_content_len : -1);
+			if (successfully_written_bytes == text_content_len)
+				return (1);
+			return (-1);
+		}
 	}
+	close(fd);
 
 	return (1);
 }
