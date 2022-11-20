@@ -10,7 +10,7 @@
  * @idx: index where new node will end up in
  * @n: number that the new node will contain
  *
- * Return: pointer to new node's address if it was 
+ * Return: pointer to new node's address if it was
  * successfully inserted, otherwise: NULL.
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
