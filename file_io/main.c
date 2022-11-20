@@ -7,19 +7,15 @@
  *
  * Return: Always 0.
  */
-int main(int ac, char **av)
+int main(void)
 {
-	if (ac != 3)
-	{
-		dprintf(2, "Usage: %s filename text\n", av[0]);
-		exit(1);
-	}
+	printf("%d\n", append_text_to_file(NULL, NULL));
+	printf("%d\n", append_text_to_file("b", NULL));
+	printf("%d\n", append_text_to_file("a", NULL));
 
-	printf("%d\n", create_file("file0", "hello"));
-	printf("%d\n", create_file("file1", "hello"));
-	printf("%d\n", create_file("file2", "hi"));
-	printf("%d\n", create_file("file3", "can't write this :("));
-	printf("%d\n", create_file("file4", NULL));
+	printf("%d\n", append_text_to_file(NULL, "hi\n"));
+	printf("%d\n", append_text_to_file("b", "hi\n"));
+	printf("%d\n", append_text_to_file("a", "hi\n"));
 
 	return (0);
 }
