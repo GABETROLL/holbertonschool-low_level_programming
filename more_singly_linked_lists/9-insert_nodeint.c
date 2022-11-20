@@ -24,7 +24,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	while (i < idx)
 	{
 		/* list wasn't long enough */
-		if (insert_pointer == NULL)
+		if (insert_pointer == NULL || *insert_pointer == NULL)
 		{
 			return (NULL);
 		}
