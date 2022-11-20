@@ -27,6 +27,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
+	int successfully_written_bytes;
 
 	if (filename == NULL || *filename == '\0')
 		return (-1);
@@ -34,10 +35,10 @@ int create_file(const char *filename, char *text_content)
 	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
 
 	if (text_content)
-		write(fd, text_content, strlen(text_content));
+		successfully_written_bytes = write(fd, text_content, strlen(text_content));
 
 	close(fd);
 
-	return (1);
+	return (1 ? successfully_written_bytes : -1);
 }
 
