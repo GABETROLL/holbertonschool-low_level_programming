@@ -53,12 +53,13 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
-	output_fd = open(argv[2], O_WRONLY | O_TRUNC, 0664);
+	output_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (output_fd == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 		return (99);
 	}
+
 	do {
 		read_bytes = read(input_fd, input_buff, buff_size);
 		write(output_fd, input_buff, read_bytes);
