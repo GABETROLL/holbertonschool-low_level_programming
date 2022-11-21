@@ -25,26 +25,30 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	 * to by the chain of pointers in
 	 * each variable
 	 */
-	dlistint_t **tail;
+	dlistint_t *tail_ptr;
+	dlistint_t **tail_ptr_ptr;
 	dlistint_t *new_tail;
 
 	if (head == NULL)
 		return (NULL);
 
-	tail = head;
+	tail_ptr_ptr = head;
 
-	while (*tail)
-		tail = & (**tail).next;
+	while (*tail_ptr_ptr)
+	{
+		tail_ptr = *tail_ptr_ptr;
+		tail_ptr_ptr = & (**tail_ptr_ptr).next;
+	}
 
 	new_tail = malloc(sizeof(dlistint_t));
 	if (new_tail == NULL)
 		return (NULL);
 
 	new_tail->n = n;
-	new_tail->prev = *tail;
+	new_tail->prev = tail_ptr;
 	new_tail->next = NULL;
 
-	*tail = new_tail;
+	*tail_ptr_ptr = new_tail;
 
 	return (new_tail);
 }
