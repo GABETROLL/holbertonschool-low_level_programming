@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * Adds a new tail node to the linked list
- * in '*head' that contains 'n' as its 'n'
- * attribute.
+ * add_dnodeint_end - Adds a new tail node
+ * to the linked list in '*head' that
+ * contains 'n' as its 'n' attribute.
  *
  * If head is NULL, or adding the new node
  * fails, return NULL.
@@ -32,7 +32,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	while (*tail_ptr_ptr)
 	{
 		tail_ptr = *tail_ptr_ptr;
-		tail_ptr_ptr = & (**tail_ptr_ptr).next;
+		tail_ptr_ptr = &(**tail_ptr_ptr).next;
 	}
 
 	new_tail = malloc(sizeof(dlistint_t));
