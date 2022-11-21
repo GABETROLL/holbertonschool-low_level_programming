@@ -10,13 +10,23 @@
  */
 int main(void)
 {
-	int index = 1;
 	dlistint_t *head = NULL;
+	dlistint_t **current = &head;
 
-	for (; index <= 10; index++)
+	insert_dnodeint_at_index(&head, 2, 0);
+	add_dnodeint_end(&head, 1);
+	insert_dnodeint_at_index(&head, 2, 2);
+	add_dnodeint_end(&head, 3);
+	insert_dnodeint_at_index(&head, 2, 4);
+	add_dnodeint_end(&head, 5);
+	insert_dnodeint_at_index(&head, 2, 6);
+
+	print_dlistint(head);
+
+	while (*current)
 	{
-		printf("%d\n", sum_dlistint(head));
-		add_dnodeint_end(&head, index);
+		printf("prev: %p n: %d next: %p\n", (void *)(**current).prev, (**current).n, (void *)(**current).next);
+		current = &(**current).next;
 	}
 
 	free_dlistint(head);
