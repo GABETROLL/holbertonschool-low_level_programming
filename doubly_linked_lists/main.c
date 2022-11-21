@@ -13,12 +13,18 @@ int main(void)
 	int index = 1;
 	dlistint_t *head = NULL;
 
-	add_dnodeint_end(NULL, 0);
-
 	for (; index <= 10; index++)
-		add_dnodeint_end(&head, index);
+	{
+		dlistint_t *test = get_dnodeint_at_index(head, 1);
 
-	print_dlistint(head);
+		if (test)
+			printf("%d\n", test->n);
+		else
+			printf("(nil)\n");
+
+		add_dnodeint_end(&head, index);
+	}
+
 	free_dlistint(head);
 
 	return (0);
