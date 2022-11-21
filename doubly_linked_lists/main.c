@@ -13,10 +13,10 @@ int main(void)
 	int index = 1;
 	dlistint_t *head = NULL;
 
-	add_dnodeint(NULL, 0);
+	add_dnodeint_end(NULL, 0);
 
 	for (; index <= 10; index++)
-		add_dnodeint(&head, index);
+		add_dnodeint_end(&head, index);
 
 	print_dlistint(head);
 
