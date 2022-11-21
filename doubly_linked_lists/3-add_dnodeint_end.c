@@ -20,12 +20,7 @@
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	/*
-	 * the names say what's being pointed
-	 * to by the chain of pointers in
-	 * each variable
-	 */
-	dlistint_t *tail_ptr;
+	dlistint_t *tail_ptr = NULL;
 	dlistint_t **tail_ptr_ptr;
 	dlistint_t *new_tail;
 
