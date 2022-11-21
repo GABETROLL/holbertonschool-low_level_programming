@@ -10,16 +10,15 @@
  */
 int main(void)
 {
-	dlistint_t head = {1, NULL, NULL};
-	dlistint_t new =  {2, NULL, NULL};
+	int index = 1;
+	dlistint_t *head = NULL;
 
-	printf("%ld\n", dlistint_len(NULL));
-	printf("%ld\n", dlistint_len(&head));
+	add_dnodeint(NULL, 0);
 
-	head.next = &new;
-	new.prev = &head;
+	for (; index <= 10; index++)
+		add_dnodeint(&head, index);
 
-	printf("%ld\n", dlistint_len(&head));
+	print_dlistint(head);
 
 	return (0);
 }
