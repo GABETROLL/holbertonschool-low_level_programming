@@ -10,17 +10,16 @@
  */
 int main(void)
 {
-	dlistint_t *nothing = NULL;
 	dlistint_t head = {1, NULL, NULL};
-	dlistint_t new = {2, NULL, NULL};
+	dlistint_t new =  {2, NULL, NULL};
 
-	print_dlistint(nothing);
-	print_dlistint(&head);
+	printf("%ld\n", dlistint_len(NULL));
+	printf("%ld\n", dlistint_len(&head));
 
 	head.next = &new;
 	new.prev = &head;
 
-	print_dlistint(&head);
+	printf("%ld\n", dlistint_len(&head));
 
 	return (0);
 }
