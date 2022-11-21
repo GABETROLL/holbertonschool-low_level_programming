@@ -14,7 +14,22 @@ void print_dlinked_list(dlistint_t *node)
 {
 	while (node)
 	{
-		printf("prev: %p n: %d next: %p\n", (void *)node->prev, node->n, (void *)node->next);
+		printf("prev: ");
+		if (node->prev)
+			printf("%d ", (node->prev)->n);
+		else
+			printf("(nil) ");
+
+		printf("n: %d ", node->n);
+
+		printf("next: ");
+		if (node->next)
+			printf("%d", (node->next)->n);
+		else
+			printf("(nil)");
+
+		printf("\n");
+
 		node = node->next;
 	}
 }
@@ -26,18 +41,26 @@ void print_dlinked_list(dlistint_t *node)
  */
 int main(void)
 {
-	dlistint_t *head = NULL;
-	int index_count;
+	int max_index = 5;
+	int insert_index = 0;
 
-	for (index_count = 0; index_count < 5; index_count++)
+	for (; insert_index < max_index; insert_index++)
 	{
-		insert_dnodeint_at_index(&head, 2, index_count);
-		printf("Added node with n attribute as %d at index 2:\n", index_count);
-		print_dlinked_list(head);
+		dlistint_t *head = NULL;
+		int index_count;
 
-		add_dnodeint_end(&head, index_count);
-		printf("Added node with n attribute as %d at end:\n", index_count);
-		print_dlinked_list(head);
+		printf("STARTING NEW LOOP WITH INSER INDEX %d.\n", insert_index);
+
+		for (index_count = 0; index_count < 5; index_count++)
+		{
+			insert_dnodeint_at_index(&head, insert_index, index_count);
+			printf("Added node with n attribute as %d at index %d:\n", index_count, insert_index);
+			print_dlinked_list(head);
+
+			add_dnodeint_end(&head, index_count);
+			printf("Added node with n attribute as %d at end:\n", index_count);
+			print_dlinked_list(head);
+		}
 	}
 
 	return (0);
