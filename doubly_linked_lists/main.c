@@ -15,13 +15,7 @@ int main(void)
 
 	for (; index <= 10; index++)
 	{
-		dlistint_t *test = get_dnodeint_at_index(head, 1);
-
-		if (test)
-			printf("%d\n", test->n);
-		else
-			printf("(nil)\n");
-
+		printf("%d\n", sum_dlistint(head));
 		add_dnodeint_end(&head, index);
 	}
 
