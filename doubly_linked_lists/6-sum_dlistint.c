@@ -7,6 +7,7 @@
  *
  * Return: sum of all ints in all nodes
  * of linked list pointed to by head
+ */
 int sum_dlistint(dlistint_t *head)
 {
 	int result = 0;
