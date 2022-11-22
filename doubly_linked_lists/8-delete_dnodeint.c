@@ -1,5 +1,18 @@
 #include "lists.h"
 
+/**
+ * delete_dnodeint_at_index - Disconnects and frees
+ * node at index 'index' in doubly linked list
+ * pointed to by '*head'.
+ *
+ * If the index isn't present in the list or list is empty,
+ * or if 'head' is NULL, return -1.
+ *
+ * @head: linked list head pointer pointer
+ * @index: index of node to disconnect and free
+ *
+ * Return: 1 if succesful, -1 otherwise
+ */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	/* node previous to the node to delete */
@@ -14,7 +27,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *del_node_ptr;
 	/* node next to the node to delete */
 	dlistint_t *next_ptr = NULL;
-
 	unsigned int index_count = 0;
 
 	/* find pointer to node to delete and its previous */
@@ -22,7 +34,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		if (!del_node_ptr_ptr || !(*del_node_ptr_ptr))
 			return (-1);
-
 		prev_ptr = *del_node_ptr_ptr;
 		del_node_ptr_ptr = &(**del_node_ptr_ptr).next;
 	}
