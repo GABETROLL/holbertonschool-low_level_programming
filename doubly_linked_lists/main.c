@@ -41,27 +41,33 @@ void print_dlinked_list(dlistint_t *node)
  */
 int main(void)
 {
-	int max_index = 5;
-	int insert_index = 0;
+	dlistint_t *head = NULL;
+	int index_count;
+	int max_node_count = 3;
+	int result;
 
-	for (; insert_index < max_index; insert_index++)
+	for (index_count = 0; index_count < max_node_count; index_count++)
+		add_dnodeint_end(&head, index_count);
+
+	print_dlinked_list(head);
+
+	for (; index_count >= 0; index_count -= 2)
 	{
-		dlistint_t *head = NULL;
-		int index_count;
+		printf("Deleting node at index %d:\n", index_count);
+		result = delete_dnodeint_at_index(&head, index_count);
+		print_dlinked_list(head);
+		printf("\nOutput: %d\n\n", result);
 
-		printf("STARTING NEW LOOP WITH INSER INDEX %d.\n", insert_index);
-
-		for (index_count = 0; index_count < 5; index_count++)
-		{
-			insert_dnodeint_at_index(&head, insert_index, index_count);
-			printf("Added node with n attribute as %d at index %d:\n", index_count, insert_index);
-			print_dlinked_list(head);
-
-			add_dnodeint_end(&head, index_count);
-			printf("Added node with n attribute as %d at end:\n", index_count);
-			print_dlinked_list(head);
-		}
+		printf("Deleting node at index 0:\n");
+		result = delete_dnodeint_at_index(&head, 0);
+		print_dlinked_list(head);
+		printf("\nOutput: %d\n\n", result);
 	}
+
+	printf("Deleting node at index 0:\n");
+	result = delete_dnodeint_at_index(&head, index_count);
+	print_dlinked_list(head);
+	printf("\nOutput: %d\n\n", result);
 
 	return (0);
 }
