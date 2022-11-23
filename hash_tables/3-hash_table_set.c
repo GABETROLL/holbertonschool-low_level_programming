@@ -54,11 +54,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node;
 	int index;
 
-	if (key == NULL || *key == '\0')
+	if (!ht || !key || *key == '\0')
 		return (0);
 
 	index = key_index((unsigned char *)key, ht->size);
-
 	/*
 	 * If the key was already present in the linked list,
 	 * there's no need to create a new one or a new node.
@@ -69,18 +68,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		node = malloc(sizeof(hash_node_t));
 		if (!node)
 			return (0);
-
 		node->key = strdup((char *)key);
-		node->value = strdup((char *)value);
-
-		if (!node->key || !node->value)
+		if (!node->key)
 		{
-			free(node->key);
-			free(node->value);
 			free(node);
 			return (0);
 		}
-
+		node->value = strdup((char *)value);
+		if (!node->value)
+		{
+			free(node->key);
+			free(node);
+			return (0);
+		}
 		node->next = ht->array[index];
 		ht->array[index] = node;
 	}
