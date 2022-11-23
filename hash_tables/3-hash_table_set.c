@@ -3,30 +3,32 @@
 #include <stdio.h>
 
 /**
- * key_insert_pointer - Returns pointer to pointer
- * to node in hash table linked list if the
+ * already_present_node - Returns pointer to node
+ * in hash table linked list if the
  * node has the same key as 'key'.
  *
- * If the node isn't present, return pointer to
- * pointer to the head of linked list
- * '*linked_list'.
+ * If the node isn't present, return NULL.
  *
  * @key: key to find in hash table linked list
  * @linked_list: hash table linked list
  *
- * Return: pointer to pointer to node if found, NULL otherwise
+ * Return: pointer to node if found, NULL otherwise
  */
-hash_node_t *key_insert_pointer(char *key, hash_node_t *linked_list)
+hash_node_t *already_present_node(char *key, hash_node_t *linked_list)
 {
-	hash_node_t **current = &linked_list;
+	hash_node_t *current = linked_list;
 
-	while (*current)
+	while (current)
 	{
-		if ((**current).key == key)
+		int keys_are_equal = !strcmp(current->key, key);
+
+		if (keys_are_equal)
 			return (current);
+
+		current = current->next;
 	}
 
-	return (&linked_list);
+	return (NULL);
 }
 
 /**
@@ -49,47 +51,45 @@ hash_node_t *key_insert_pointer(char *key, hash_node_t *linked_list)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node;
+	hash_node_t *node;
 	int index;
-	hash_node_t *node_with_same_key;
 
-	/* can't have an empty key */
 	if (key == NULL || *key == '\0')
 		return (0);
 
 	index = key_index((unsigned char *)key, ht->size);
 
-	new_node = malloc(sizeof(hash_node_t));
-	if (new_node == NULL)
-		return (0);
-
-	/* Try to copy const values into new_node */
-	new_node->key = malloc(sizeof(char) * strlen((char *)key));
-
-	if (new_node->key == NULL)
-	{
-		free(new_node);
-		return (0);
-	}
-	strcpy(new_node->key, (char *)key);
-
-	new_node->value = malloc(sizeof(char) * strlen((char *)value));
-
-	if (new_node->value == NULL)
-	{
-		free(new_node->key);
-		free(new_node);
-		return (0);
-	}
-	strcpy(new_node->value, (char *)value);
-
 	/*
-	 * insert new node in either the beggining of the list
-	 * if no other nodes with the same key were found,
-	 * otherwise at that memory location.
+	 * If the key was already present in the linked list,
+	 * there's no need to create a new one or a new node.
 	 */
-	*(key_insert_pointer(ht->array[index]) = new_node;
+	node = already_present_node((char *)key, ht->array[index]);
+	if (!node)
+	{
+		node = malloc(sizeof(hash_node_t));
+		if (!node)
+			return (0);
 
+		node->key = strdup((char *)key);
+		node->value = strdup((char *)value);
+
+		if (!node->key || !node->value)
+		{
+			free(node->key);
+			free(node->value);
+			free(node);
+			return (0);
+		}
+
+		node->next = ht->array[index];
+		ht->array[index] = node;
+	}
+	else
+	{
+		node->value = strcpy(node->value, (char *)value);
+		if (!node->value)
+			return (0);
+	}
 	return (1);
 }
 

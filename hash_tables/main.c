@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	hash_table_t *ht = hash_table_create(1024);
+	hash_table_t *ht = hash_table_create(10);
 
-	printf("%s -> %d\n", "hi", hash_table_set(ht, "Holberton", "is cool"));
-	printf("%s -> %d\n", "dram", hash_table_set(ht, "Holberton", "is soooo cooool"));
-	printf("%s -> %d\n", "vivency", hash_table_set(ht, "Holberton", "is awesome"));
+	hash_table_set(ht, "Holberton", "is cool");
+	hash_table_set(ht, "Holberton", "is soooo cooool");
+	hash_table_set(ht, "Holberton", "is awesome");
 
 	hash_table_print(ht);
 
