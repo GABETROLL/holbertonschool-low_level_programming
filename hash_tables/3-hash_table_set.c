@@ -31,7 +31,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	/* copy const values into new_node */
-	new_node->key = *(unsigned char **) &key;
+	new_node->key = *(char **) &key;
 	new_node->value = strcpy(value);
 	new_node->next = ht->array[index];
 
