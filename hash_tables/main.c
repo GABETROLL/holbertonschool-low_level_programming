@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 #include "hash_tables.h"
 
@@ -10,10 +8,16 @@
  */
 int main(void)
 {
-    hash_table_t *ht;
+	unsigned char *s = (unsigned char *)("Hello, World!");
+	unsigned long int size = 1;
 
-    ht = hash_table_create(1024);
-    printf("%p\n", (void *)ht);
-    return (EXIT_SUCCESS);
+	printf("Hash: %lu\n", hash_djb2(s));
+
+	for (; size <= 1024; size++)
+	{
+		printf("%lu\n", key_index(s, size));
+	}
+
+	return (EXIT_SUCCESS);
 }
 
