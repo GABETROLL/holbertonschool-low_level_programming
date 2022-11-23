@@ -1,4 +1,6 @@
 #include "hash_tables.h"
+#include <string.h>
+#include <stdio.h>
 
 /**
  * hash_table_set - Adds key 'key' paired with value 'value'
@@ -30,11 +32,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_node == NULL)
 		return (0);
 
-	/* copy const values into new_node */
-	new_node->key = *(char **) &key;
-	new_node->value = strcpy(value);
-	new_node->next = ht->array[index];
+	/* Try to copy const values into new_node */
+	new_node->key = (char *)key;
+	new_node->value = malloc(sizeof(char) * strlen((char *)value));
 
+	if (new_node->value == NULL)
+	{
+		free(new_node);
+		return (0);
+	}
+	strcpy(new_node->value, (char *)value);
+
+	/* Make new node the new haed of the linked list */
+	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
 
 	return (1);
