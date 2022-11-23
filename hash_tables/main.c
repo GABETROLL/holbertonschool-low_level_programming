@@ -8,15 +8,13 @@
  */
 int main(void)
 {
-	unsigned char *s = (unsigned char *)("Hello, World!");
-	unsigned long int size = 1;
+	hash_table_t *ht = hash_table_create(1024);
 
-	printf("Hash: %lu\n", hash_djb2(s));
+	printf("%s -> %d\n", "hi", hash_table_set(ht, "hi", "hello"));
+	printf("%s -> %d\n", "dram", hash_table_set(ht, "dram", ""));
+	printf("%s -> %d\n", "vivency", hash_table_set(ht, "vivency", "PLEASE"));
 
-	for (; size <= 1024; size++)
-	{
-		printf("%lu\n", key_index(s, size));
-	}
+	hash_table_print(ht);
 
 	return (EXIT_SUCCESS);
 }
