@@ -14,14 +14,14 @@ int main(void)
 
 	ht = hash_table_create(1024);
 	hash_table_print(ht);
-	hash_table_set(ht, "", "fun");
-	hash_table_set(ht, "python", "awesome");
-	hash_table_set(ht, "Bob", "and Kris love asm");
-	hash_table_set(ht, "N", "queens");
-	hash_table_set(ht, "Asterix", "Obelix");
-	hash_table_set(ht, "Betty", "Cool");
-	hash_table_set(ht, "98", "Battery Street");
-	hash_table_set(ht, "HELLO", "WORLD!");
+	hash_table_set(ht, "Iceland", "fun");
+	hash_table_set(ht, "Bahrain", "awesome");
+	hash_table_set(ht, "Russia", "and Kris love asm");
+	hash_table_set(ht, "Japan", "queens");
+	hash_table_set(ht, "Australia", "Obelix");
+	hash_table_set(ht, "Canada", "Cool");
+	hash_table_set(ht, "Spain", "Battery Street");
+	hash_table_set(ht, "UK", "WORLD!");
 
 	hash_table_print(ht);
 

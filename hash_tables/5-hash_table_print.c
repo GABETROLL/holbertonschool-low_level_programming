@@ -14,6 +14,8 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
+	/* print ", " before every item after the first */
+	int previous = 0;
 	unsigned long int index_count;
 
 	if (ht == NULL)
@@ -27,12 +29,14 @@ void hash_table_print(const hash_table_t *ht)
 
 		while (linked_list)
 		{
-			printf("'%s': '%s'", linked_list->key, linked_list->value);
-			/* last item shouldn't have a comma after it. */
-			if (linked_list->next)
+			if (previous)
 				printf(", ");
 
+			printf("'%s': '%s'", linked_list->key, linked_list->value);
+
 			linked_list = linked_list->next;
+
+			previous = 1;
 		}
 	}
 
