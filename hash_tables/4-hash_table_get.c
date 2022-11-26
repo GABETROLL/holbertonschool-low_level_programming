@@ -12,14 +12,26 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	hash_node_t *linked_list_with_key = ht->array[key_index((unsigned char *)key, ht->size)];
+	hash_node_t *linked_list_with_key;
+
+	if (!ht)
+		return (NULL);
+
+	/* linked list node with key to have its value returned */
+	linked_list_with_key = ht->array[key_index((unsigned char *)key, ht->size)];
 
 	while (1)
 	{
+		/* the key could be a null pointer */
+		int pointers_match;
 		int key_matches;
 
 		if (!linked_list_with_key)
 			return (NULL);
+
+		pointers_match = linked_list_with_key->key == key;
+		if (pointers_match)
+			return (linked_list_with_key->value);
 
 		key_matches = !strcmp(linked_list_with_key->key, key);
 		if (key_matches)
