@@ -30,9 +30,12 @@ void hash_table_print(const hash_table_t *ht)
 			printf("'%s': '%s', ", linked_list->key, linked_list->value);
 			linked_list = linked_list->next;
 		}
-		printf("\n");
 	}
 
-	printf("\b\b}\n");
+	/* if loop ran, backspace the last space and comma */
+	if (index_count)
+		printf("\b\b");
+
+	printf("}\n");
 }
 
