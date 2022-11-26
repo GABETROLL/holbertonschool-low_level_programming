@@ -14,6 +14,8 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
+	/* to delete last comma */
+	int comma;
 	unsigned long int index_count;
 
 	if (ht == NULL)
@@ -28,12 +30,14 @@ void hash_table_print(const hash_table_t *ht)
 		while (linked_list)
 		{
 			printf("'%s': '%s', ", linked_list->key, linked_list->value);
+			/* to delete last comma */
+			comma = 1;
 			linked_list = linked_list->next;
 		}
 	}
 
 	/* if loop ran, backspace the last space and comma */
-	if (index_count)
+	if (comma)
 		printf("\b\b");
 
 	printf("}\n");
