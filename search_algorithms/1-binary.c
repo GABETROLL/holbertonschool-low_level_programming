@@ -29,7 +29,9 @@ int binary_search(int *array, size_t size, int value)
 	{
 		size_t print_index = 0;
 		size_t section_right_half;
+		size_t new_section_len;
 
+		/* printing */
 		printf("Searching in array: ");
 		for (; print_index < section_len; print_index++)
 		{
@@ -39,15 +41,25 @@ int binary_search(int *array, size_t size, int value)
 		}
 		printf("\n");
 
+		/* searching */
 		if (array[section_start] == value)
 			return ((int)section_start);
 
-		section_right_half = section_start + section_len / 2;
+		new_section_len = section_len >> 1;
+		/*
+		 * if the section_len is odd, we want the right
+		 * section to be the short one. Thanks to
+		 * right shifting converting 7/2 to 3 and
+		 * 5/2 to 2, the difference of section_len and
+		 * new_section_len will give us the index of the
+		 * right side.
+		 */
+		section_right_half = section_start + section_len - new_section_len;
 
 		if (array[section_right_half] <= value)
 			section_start = section_right_half;
 
-		section_len /= 2;
+		section_len >>= 1;
 	}
 
 	return (-1);
