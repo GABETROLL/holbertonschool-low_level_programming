@@ -30,7 +30,7 @@ int binary_search(int *array, size_t size, int value)
 		size_t print_index = 0;
 		size_t section_right_half;
 
-		printf("Searching in array:");
+		printf("Searching in array: ");
 		for (; print_index < section_len; print_index++)
 		{
 			printf("%d", array[section_start + print_index]);
