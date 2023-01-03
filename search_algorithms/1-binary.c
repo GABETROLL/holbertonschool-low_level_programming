@@ -22,7 +22,10 @@ int binary_search(int *array, size_t size, int value)
 	size_t section_start = 0;
 	size_t section_len = size;
 
-	while (array[section_start] <= value && section_len > 1)
+	if (!array)
+		return (-1);
+
+	while (array[section_start] <= value && section_len)
 	{
 		size_t print_index = 0;
 		size_t section_right_half;
@@ -41,7 +44,7 @@ int binary_search(int *array, size_t size, int value)
 
 		section_right_half = section_start + section_len / 2;
 
-		if (array[section_right_half] < value)
+		if (array[section_right_half] <= value)
 			section_start = section_right_half;
 
 		section_len /= 2;
