@@ -9,9 +9,8 @@
  *
  * @array: pointer to first int in int array
  * @size: amount of ints in array
- *
- * (NOT MAKING IT THE CORRECT SIZE LEADS TO UNDEFINED
- * BEHAVIOUR)
+ * NOT MAKING IT THE CORRECT SIZE LEADS TO UNDEFINED
+ * BEHAVIOUR
  *
  * @value: value being searched inside array
  *
