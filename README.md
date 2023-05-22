@@ -1,5 +1,6 @@
 # Begginer C concepts
 This is a repository containing simple examples of the basic tools of the C programming language, taught by Holberton
+Each individual folder has files and a README.md that teach you how to use the C concepts/tools specified by the folder name.
 ## Requirements For Installation
 - A C compiler (The one used for this project is (gcc)[https://gcc.gnu.org/])
 To install on Debian-based Linux distros (we used Ubuntu)
