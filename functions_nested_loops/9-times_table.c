@@ -6,19 +6,15 @@
  */
 void times_table(void)
 {
-	int a;
-	int b;
-	int product;
-	int msd;
-	int lsd;
+	int a, b;
 
 	for (a = 0; a < 10; a++)
 	{
 		for (b = 0; b < 10; b++)
 		{
-			product = a * b;
-			lsd = product % 10;
-			msd = (product / 10) % 10;
+			int product = a * b;
+			int lsd = product % 10;
+			int msd = (product / 10) % 10;
 
 			if (b != 0)
 			{

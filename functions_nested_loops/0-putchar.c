@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * main - prints "_putchar" followed by a new line, and exits.
@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-	char[] message = "_putchar\n";
-	int index;
+	char message[] = "_putchar\n";
+	unsigned long int index;
 
 	for (index = 0; index < sizeof(message); index++)
 	{
