@@ -43,12 +43,10 @@ int *array_range(int min, int max)
 	 * The difference of the max and min parameters in the range above
 	 * is 3, but the amount of ints in it is 4.
 	 *
-	 * This means that if we include 'min' and 'max' in
-	 * the array, the array's size is 'max' and 'min''s difference
-	 * plus one.
+	 * This means that if we include 'min' and 'max' in the array,
+	 * the array's size is 'max' and 'min''s difference plus one.
 	 *
-	 * Their difference is also always positive,
-	 * since max > min
+	 * Their difference is also always positive, since max > min.
 	 */
 
 	result = malloc(sizeof(int) * size);
@@ -60,12 +58,11 @@ int *array_range(int min, int max)
 	for (i = 0; i < size; i++)
 	{
 		result[i] = min + i;
-		/*
-		 * adding min to numbers from 0 to size
-		 * would result in numbers from min to max,
-		 * which is exactly what we need.
-		 */
 	}
+	/*
+	 * adding numbers from min to max in our array
+	 * that's in the heap
+	*/
 
 	return (result);
 }
