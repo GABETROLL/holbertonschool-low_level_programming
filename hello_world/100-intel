@@ -1,0 +1,2 @@
+gcc $CFILE -s -masm=intel
+
