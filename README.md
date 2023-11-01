@@ -1,6 +1,6 @@
 # Begginer C concepts
 This is a repository containing exercises, (challenging) challenges and examples of the basic tools of the C programming language, taught by Holberton.
-Each individual folder has files and a README.md that teach you how to use the C concepts/tools specified by the folder name.
+Each individual folder has files that use the tools of The C Programming Language.
 ## Code styles and Standards
 - [Betty](https://github.com/holbertonschool/Betty) linter 
 - [gnu89](https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Standards.html) standard
@@ -48,7 +48,6 @@ $ ./output
 ## Creator
 Hello, I'm Gabriel Fernandez, the creator of this project. I first started programming in Python, in late 2019, and made my first small games in Pygame, from YouTube tutorials. I then started Holberton in September 2022, and chose Web Development as my Holberton Specialization.
 
-During the first 3 months of the Holberton program, we are taught C. I had started using C about a few weeks before the course started, since they told us to prepare ourselves for it. The first few dozen projects for Holberton since the first few weeks of the course, until the start of the 2nd trimester, we slowly built this repository with its exercises.
 ### My Contacts
 <a href="https://www.linkedin.com/in/gabriel-fernandez-415609278/" target="_blank">
 <img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=LinkedIn style="margin-bottom: 5px;" />
@@ -60,3 +59,17 @@ During the first 3 months of the Holberton program, we are taught C. I had start
 
 My Portfolio Project
 https://github.com/GABETROLL/Tetris3D/
+
+## Building this Project
+During the first 3 months of the Holberton program, we are taught C. I had started using C about a few weeks before the course started, since they told us to prepare ourselves for it. The first few dozen projects for Holberton since the first few weeks of the course, until the start of the 2nd trimester, we slowly built this repository with its exercises.
+
+Throughout this time, I studied the C programming language closely and passionately. I used to also use ``gcc -S`` to see the assembly code produced, and learned a lot more about how C works, and how effective it is.
+
+My biggest challenge was https://github.com/GABETROLL/holbertonschool-low_level_programming/doubly_linked_lists/ , which took me a few days, since I kept confusing the pointers.
+Other big challenges were:
+- pointers
+- [static libraries](https://github.com/GABETROLL/holbertonschool-low_level_programming/static_libraries/)
+- [makefiles](https://github.com/GABETROLL/holbertonschool-low_level_programming/makefiles/)
+- [variadic functions](https://github.com/GABETROLL/holbertonschool-low_level_programming/variadic_functions/)
+- [file IO](https://github.com/GABETROLL/holbertonschool-low_level_programming/file_io/)
+- Everything
