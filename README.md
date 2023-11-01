@@ -1,6 +1,8 @@
 # Begginer C concepts
 This is a repository containing exercises, (challenging) challenges and examples of the basic tools of the C programming language, taught by Holberton.
 Each individual folder has files that use the tools of The C Programming Language.
+
+While each folder contains example code that uses the features, this repository lacks explanations, tutorials or README.md quality in each folder.
 ## Code styles and Standards
 - [Betty](https://github.com/holbertonschool/Betty) linter 
 - [gnu89](https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Standards.html) standard
