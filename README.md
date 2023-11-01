@@ -1,4 +1,4 @@
-# Begginer C concepts
+# Learning C With Holberton
 This is a repository containing exercises, (challenging) challenges and examples of the basic tools of the C programming language, taught by Holberton.
 Each individual folder has files that use the tools of The C Programming Language.
 
