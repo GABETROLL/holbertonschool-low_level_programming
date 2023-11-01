@@ -1,11 +1,9 @@
 # Begginer C concepts
-This is a repository containing simple examples of the basic tools of the C programming language, taught by Holberton
+This is a repository containing exercises, (challenging) challenges and examples of the basic tools of the C programming language, taught by Holberton.
 Each individual folder has files and a README.md that teach you how to use the C concepts/tools specified by the folder name.
 ## Code styles and Standards
 - (Betty)[https://github.com/holbertonschool/Betty] linter 
 - (gnu89)[https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Standards.html] standard
-### Compilation & Flags
-```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 ...```
 ## Requirements For Installation
 - A C compiler (The one used for this project is (gcc)[https://gcc.gnu.org/])
 To install on Debian-based Linux distros (we used Ubuntu)
@@ -24,7 +22,7 @@ $ git clone git@github.com:GABETROLL/holbertonschool-low_level_programming.git
 $ cd holbertonschool-low_level_programming/
 ```
 ## Usage
-Usually, ecause these are example scripts in directories, there are no ``main.c`` files. But you can make some on your own in each folder to test my code there. There are header files in (almost) all of the folders, that you can include in your ``main.c`` file:
+Sometimes, because these are example scripts in directories, there are no ``main.c`` files. But, you can make some on your own in each folder to test my code there. There are header files in (almost) all of the folders, that you can include in your ``main.c`` file:
 ```
 #include "main.h"
 
@@ -33,7 +31,7 @@ int main(int argc, char **argv) {
   return (0);
 }
 ```
-Then you can compile these files with  GCC (GNU Compiler Collection):
+Then you can compile these files with  (GCC)[https://gcc.gnu.org/] (GNU Compiler Collection):
 ```
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 <files> main.c -o output
 ```
@@ -47,3 +45,18 @@ Then run them:
 ```
 $ ./output
 ```
+## Creator
+Hello, I'm Gabriel Fernandez, the creator of this project. I first started programming in Python, in late 2019, and made my first small games in Pygame, from YouTube tutorials. I then started Holberton in September 2022, and chose Web Development as my Holberton Specialization.
+
+During the first 3 months of the Holberton program, we are taught C. I had started using C about a few weeks before the course started, since they told us to prepare ourselves for it. The first few dozen projects for Holberton since the first few weeks of the course, until the start of the 2nd trimester, we slowly built this repository with its exercises.
+### My Contacts
+<a href="https://www.linkedin.com/in/gabriel-fernandez-415609278/" target="_blank">
+<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=LinkedIn style="margin-bottom: 5px;" />
+</a>
+
+<a href="https://twitter.com/gabe_programs" target="_blank">
+<img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" />
+</a>
+
+My Portfolio Project
+https://github.com/GABETROLL/Tetris3D/
