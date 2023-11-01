@@ -2,16 +2,16 @@
 This is a repository containing exercises, (challenging) challenges and examples of the basic tools of the C programming language, taught by Holberton.
 Each individual folder has files and a README.md that teach you how to use the C concepts/tools specified by the folder name.
 ## Code styles and Standards
-- (Betty)[https://github.com/holbertonschool/Betty] linter 
-- (gnu89)[https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Standards.html] standard
+- [Betty](https://github.com/holbertonschool/Betty) linter 
+- [gnu89](https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Standards.html) standard
 ## Requirements For Installation
-- A C compiler (The one used for this project is (gcc)[https://gcc.gnu.org/])
+- A C compiler (The one used for this project is [gcc](https://gcc.gnu.org/))
 To install on Debian-based Linux distros (we used Ubuntu)
 ```
 $ sudo apt install build-essential
 $ sudo apt-get install manpages-dev
 ```
-- (Git)[https://git-scm.com/downloads]
+- [Git](https://git-scm.com/downloads)
 ```
 $ sudo apt install git
 ```
@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
   return (0);
 }
 ```
-Then you can compile these files with  (GCC)[https://gcc.gnu.org/] (GNU Compiler Collection):
+Then you can compile these files with  [GCC](https://gcc.gnu.org/) (GNU Compiler Collection):
 ```
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 <files> main.c -o output
 ```
