@@ -30,9 +30,9 @@ void print_times_table(int n)
 			 * the biggest multiplication is 15*15, 225,
 			 * so the max amount of digits for 'product' is 3.
 			 */
-			int left_digit = product % 10;
+			int left_digit = product / 100;
 			int middle_digit = (product / 10) % 10;
-			int right_digit = product / 100;
+			int right_digit = product % 10;
 
 			/* left_digit would be a zero at the left */
 			if (left_digit == 0)
