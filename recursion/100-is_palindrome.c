@@ -4,7 +4,8 @@
  * compare_chars - Compares chars
  * @c: char located at s.
  * @s: pointer to c
- * @depth: Keeps track of how far recursion needs to go to get to the other char.
+ * @depth: Keeps track of how far recursion needs to go
+ * --->to get to the other char.
  * Return: 1 if chars are the same, otherwise 0
  */
 int compare_chars(char c, char *s, int depth)
@@ -17,7 +18,7 @@ int compare_chars(char c, char *s, int depth)
 }
 
 /**
- * Uses recursion to find the end of string s.
+ * end - Uses recursion to find the end of string s.
  * @s: pointer to string that will be measured
  * Return: char pointer to end of string
  */
@@ -32,14 +33,16 @@ char *end(char *s)
 
 /**
  * _is_palindrome - Uses recursion to check if a string is a palindrome.
- * 
+ *
  * Uses recursion to:
- * --->Use recursion to find the end of the string. (function 'end')
- * --->Use recursion to find the first and last characters and compare them. ('compare_chars')
- * from the first char, to the char in the middle, using 2 less than the previous depth each time.
+ * --->find the end of the string. (function 'end')
+ * --->find the first and last characters and compare them. ('compare_chars')
+ * ------->from the first char, to the char in the middle,
+ * ------->using 2 less than the previous depth each time.
  *
  * @s: pointer to string, please use start of string.
- * @depth: keeps track of depth traveled by recursion in function; PLEASE USE 0.
+ * @depth: keeps track of depth traveled by recursion in function;
+ * PLEASE USE 0.
  * Return: 1 if s in a palindrome, otherwise 0
  */
 int _is_palindrome(char *s, int depth)

@@ -1,3 +1,5 @@
+#ifndef MAIN_H
+#define MAIN_H
 void _putchar(char);
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);
@@ -15,7 +17,7 @@ char *_strncpy(char *dest, char *src, int n);
 int _strcmp(char *s1, char *s2);
 void reverse_array(int *a, int n);
 char *string_toupper(char *);
-int in(char c, char * chars);
+int in(char c, char *chars);
 char *cap_string(char *);
 char *leet(char *);
 char *_memset(char *s, char b, unsigned int n);
@@ -26,4 +28,4 @@ char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 void print_chessboard(char (*a)[8]);
 void print_diagsums(int *a, int size);
-
+#endif
