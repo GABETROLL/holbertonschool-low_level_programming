@@ -11,6 +11,9 @@
  * 0,   4,   8,  12,  16,  20
  * 0,   5,  10,  15,  20,  25
  *
+ * (If the numbers are at the left-most column,
+ * the number doesn't get padded with spaces)
+ *
  * @n: greatest times table to display to from 0.
  * If n is greater than 15, function returns.
  * Return: void
@@ -26,25 +29,26 @@ void print_times_table(int n)
 		for (b = 0; b <= n; b++)
 		{
 			int product = a * b;
-			/*
-			 * the biggest multiplication is 15*15, 225,
-			 * so the max amount of digits for 'product' is 3.
-			 */
+			/* the max digits the product should have is 3. */
 			int left_digit = product / 100;
 			int middle_digit = (product / 10) % 10;
 			int right_digit = product % 10;
 
-			/* left_digit would be a zero at the left */
+			/* print digits */
 			if (left_digit == 0)
-				_putchar(' ');
+			{
+				if (b != 0)
+					_putchar(' ');
+			}
 			else
 				_putchar('0' + left_digit);
-			/* middle digit would be a zero at the left */
 			if (middle_digit == 0 && left_digit == 0)
-				_putchar(' ');
+			{
+				if (b != 0)
+					_putchar(' ');
+			}
 			else
 				_putchar('0' + middle_digit);
-			/* print right digit */
 			_putchar('0' + right_digit);
 			/* print separator or a new line */
 			if (b < n)
